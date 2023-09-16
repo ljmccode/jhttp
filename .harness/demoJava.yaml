@@ -6,7 +6,7 @@ pipeline:
   properties:
     ci:
       codebase:
-        connectorRef: account.Github
+        connectorRef: ljmccode_github
         repoName: jhttp
         build: <+input>
   stages:
