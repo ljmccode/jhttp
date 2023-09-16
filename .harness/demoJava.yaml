@@ -1,0 +1,35 @@
+pipeline:
+  identifier: Build_jhttp_1691000846700
+  name: Build jhttp
+  orgIdentifier: default
+  projectIdentifier: Laura_Test
+  properties:
+    ci:
+      codebase:
+        build: <+input>
+        connectorRef: account.Github_OAuth_1690919396287
+        repoName: ljmccode/jhttp
+  stages:
+    - stage:
+        identifier: build
+        name: build
+        spec:
+          cloneCodebase: true
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  identifier: build_java_app
+                  name: Build Java App
+                  spec:
+                    shell: Sh
+                    command: |-
+                      echo "Welcome to Harness CI"
+                      mvn -B package --file pom.xml
+          platform:
+            arch: Amd64
+            os: Linux
+          runtime:
+            spec: {}
+            type: Cloud
+        type: CI
