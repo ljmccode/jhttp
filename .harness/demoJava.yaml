@@ -6,9 +6,9 @@ pipeline:
   properties:
     ci:
       codebase:
+        connectorRef: account.Github
+        repoName: jhttp
         build: <+input>
-        connectorRef: account.Github_OAuth_1690919396287
-        repoName: ljmccode/jhttp
   stages:
     - stage:
         identifier: build
